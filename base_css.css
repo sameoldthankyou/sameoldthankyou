@@ -1,0 +1,75 @@
+/* Upper banner */
+body { --banner: url(https://i.imgur.com/YyOc5PE.png); }
+
+/* Circled avatar */
+body { --avatar: url(https://i.imgur.com/3D6IWum.png); }
+
+/* Upper rightside character */
+body { --character: none; }
+
+/* Main background */
+body { --background: url();}
+
+/*-S-T-A-R-T--------------------*\
+| Background Tint                |
+\*------------------------------*/
+
+body::before {
+	/* change colour here */
+	background: rgba(0, 0, 0, 0.8);
+	
+	content: "";
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/*-S-T-A-R-T--------------------*\
+| Transparent List Rows          |
+\*------------------------------*/
+
+:root {
+	/* Change colour here */
+	--row-tint: rgba(11,11,11,0.925);
+}
+
+
+.list-item, .data.priority, .data.number, .data.status:before, .data.status:after {
+	background: linear-gradient(var(--row-tint),var(--row-tint)), var(--background) no-repeat center / cover fixed transparent !important;
+}
+
+/* Tags that are actually used as tags */
+.data.tags span a[href*="=OST"] { background: rgba(80,160,240,0.3); }
+
+/*-S-T-A-R-T--------------------*\
+| Change Status Bar Width        |
+\*------------------------------*/
+
+.data.status { width: 5px !important; }
+.list-table-data { padding-left: 0px; }
+
+/*-S-T-A-R-T--------------------*\
+| Change Banner Height           |
+\*------------------------------*/
+
+/*Change number here*/
+:root { --banner-height: 470px; }
+
+.cover-block { height: var(--banner-height); }
+.header { margin-top: calc(var(--banner-height) - 36px); }
+.list-stats { top: calc(var(--banner-height) + 98px); }
+
+/*-S-T-A-R-T--------------------*\
+| CatCol Header Text R0.0        |
+\*------------------------------*/
+.status-menu .status-button{transition:color .3s ease}.status-menu .status-button.on:nth-of-type(1),.status-menu .status-button:nth-of-type(1):hover{color:var(--accent)!important}.status-menu .status-button.on:nth-of-type(2),.status-menu .status-button:nth-of-type(2):hover{color:var(--watching)!important}.status-menu .status-button.on:nth-of-type(3),.status-menu .status-button:nth-of-type(3):hover{color:var(--completed)!important}.status-menu .status-button.on:nth-of-type(4),.status-menu .status-button:nth-of-type(4):hover{color:var(--onhold)!important}.status-menu .status-button.on:nth-of-type(5),.status-menu .status-button:nth-of-type(5):hover{color:var(--dropped)!important}.status-menu .status-button.on:nth-of-type(6),.status-menu .status-button:nth-of-type(6):hover{color:var(--plantowatch)!important}
+
+/*-S-T-A-R-T--------------------*\
+| Review Tags R0.1               |
+\*------------------------------*/
+
+/* Raise or lower this number to change how wide the box is. Make sure not to remove the "px" at the end. */
+.data.tags { width: 365px; }
